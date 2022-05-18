@@ -40,6 +40,14 @@
         <servlet-name>SecurityLoginServlet</servlet-name>
         <servlet-class>za.ac.tut.web.security.SecurityLoginServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>FindAllStudentAdminServlet</servlet-name>
+        <servlet-class>za.ac.tut.web.studentadmin.FindAllStudentAdminServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EditStudentAdminServlet</servlet-name>
+        <servlet-class>za.ac.tut.web.studentadmin.EditStudentAdminServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AddAdminServlet</servlet-name>
         <url-pattern>/AddAdminServlet.do</url-pattern>
@@ -79,6 +87,14 @@
     <servlet-mapping>
         <servlet-name>SecurityLoginServlet</servlet-name>
         <url-pattern>/SecurityLoginServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FindAllStudentAdminServlet</servlet-name>
+        <url-pattern>/FindAllStudentAdminServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditStudentAdminServlet</servlet-name>
+        <url-pattern>/EditStudentAdminServlet.do</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

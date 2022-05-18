@@ -22,9 +22,9 @@ public interface StudentAdminFacadeLocal {
 
     void remove(StudentAdmin studentAdmin);
 
-    StudentAdmin find(Object id);
+    StudentAdmin findStudentAdmin(Object id);
 
-    List<StudentAdmin> findAll();
+    List<StudentAdmin> findAllStudentAdmin();
 
     List<StudentAdmin> findRange(int[] range);
 
