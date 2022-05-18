@@ -14,21 +14,10 @@ import javax.persistence.Entity;
  */
 @Entity
 public class Security extends LaboratoryUser implements Serializable {
-    private String workerType;
+    
 
     public Security() {
     }
 
-    public String getWorkerType() {
-        return workerType;
-    }
 
-    public void setWorkerType(String workerType) {
-        this.workerType = workerType;
-    }
-
-    @Override
-    public String toString() {
-        return "Security{" + "workerType=" + workerType + '}';
-    }
 }

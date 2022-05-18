@@ -57,8 +57,6 @@ public class AddSecurityServlet extends HttpServlet {
         security.setEmail(email);
         security.setPhoneNum(phoneNum);
         security.setPassword(password);
-        security.setRole(role);
-        security.setWorkerType(workerType);
 
         return security;
     }

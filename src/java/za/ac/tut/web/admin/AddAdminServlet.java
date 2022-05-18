@@ -57,7 +57,6 @@ public class AddAdminServlet extends HttpServlet {
         admin.setEmail(email);
         admin.setPhoneNum(phoneNum);
         admin.setPassword(password);
-        admin.setRole(role); 
         admin.setVerification(verification);
         
         return admin;

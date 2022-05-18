@@ -57,8 +57,6 @@ public class AddStudentAdminServlet extends HttpServlet {
         studentAdm.setEmail(email);
         studentAdm.setPhoneNum(phoneNum);
         studentAdm.setPassword(password);
-        studentAdm.setRole(role);
-        studentAdm.setSubjectCode(subjectCode);
 
         return studentAdm;
     }

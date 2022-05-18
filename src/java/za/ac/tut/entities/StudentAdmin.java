@@ -15,23 +15,11 @@ import javax.persistence.Entity;
  */
 @Entity
 public class StudentAdmin extends LaboratoryUser implements Serializable {
- private String subjectCode;
+    
 
     public StudentAdmin() {
     }
 
-    public String getSubjectCode() {
-        return subjectCode;
-    }
-
-    public void setSubjectCode(String subjectCode) {
-        this.subjectCode = subjectCode;
-    }
-
-    @Override
-    public String toString() {
-        return "StudentAdmin{" + "subjectCode=" + subjectCode + '}';
-    }
- 
+   
    
 }

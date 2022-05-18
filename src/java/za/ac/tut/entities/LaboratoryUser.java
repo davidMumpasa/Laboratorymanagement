@@ -29,7 +29,6 @@ public abstract class LaboratoryUser implements Serializable {
     private String email;
     private String password;
     private Integer phoneNum;
-    private String role;
 
     public LaboratoryUser() {
     }
@@ -68,13 +67,6 @@ public abstract class LaboratoryUser implements Serializable {
         this.phoneNum = phoneNum;
     }
 
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
-    }
     
 
     public Long getId() {
