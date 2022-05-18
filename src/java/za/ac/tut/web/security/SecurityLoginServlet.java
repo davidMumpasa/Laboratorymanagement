@@ -6,7 +6,6 @@
 package za.ac.tut.web.security;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -42,6 +41,4 @@ public class SecurityLoginServlet extends HttpServlet {
         disp.forward(request, response);
         
     }
-
-   
 }

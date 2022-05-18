@@ -6,7 +6,6 @@
 package za.ac.tut.web;
 
 import java.io.IOException;
-import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -30,17 +29,22 @@ public class UserLoginHandler extends HttpServlet {
 
         Long findUserById = Long.parseLong(request.getParameter("findUserById"));
         String password = request.getParameter("password");
-        String role = request.getParameter("role");
+        String role1= request.getParameter("admin");
+        String role2= request.getParameter("student");
+        String role3= request.getParameter("studentAdmin");
+        String role4= request.getParameter("security");
         
         String location = "SecurityLoginServlet.do";
 
-        if (role.equalsIgnoreCase("admin")) {
+        if (role1.equalsIgnoreCase("admin")) {
             location = "AdminLoginServlet.do";
-        } else if (role.equalsIgnoreCase("student")) {
+        } else if (role2.equalsIgnoreCase("student")) {
             location = "StudentLoginServlet.do";
-        } else if (role.equalsIgnoreCase("student Admin")) {
+        } else if (role3.equalsIgnoreCase("student Admin")) {
             location = "StudentAdminLoginServlet.do";
-        } 
+        } else if (role3.equalsIgnoreCase("security")) {
+            location = "SecurityLoginServlet.do";
+        }
 
         setValuesToSession(session, findUserById,password);
 

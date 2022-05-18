@@ -33,7 +33,7 @@ public class AddSecurityServlet extends HttpServlet {
 
         HttpSession session = request.getSession();
 
-        Long UserId = Long.parseLong((String) session.getAttribute("UserId"));
+        Long userId = Long.parseLong((String) session.getAttribute("UserId"));
         String name = session.getAttribute("name").toString();
         String email = session.getAttribute("email").toString();
         Integer phoneNum = Integer.parseInt((String) session.getAttribute("phoneNum"));
@@ -41,18 +41,18 @@ public class AddSecurityServlet extends HttpServlet {
         String role = session.getAttribute("role").toString();
         String workerType = session.getAttribute("workerType").toString();
 
-        LaboratoryUser security = createSecurity(UserId, role, name, email, phoneNum, password, workerType);
+        LaboratoryUser security = createSecurity(userId, role, name, email, phoneNum, password, workerType);
         userFacade.AddUser(security);
 
         RequestDispatcher disp = request.getRequestDispatcher("index.html");
         disp.forward(request, response);
     }
 
-    private LaboratoryUser createSecurity(Long UserId, String role, String name, String email, Integer phoneNum, String password, String workerType) {
+    private LaboratoryUser createSecurity(Long userId, String role, String name, String email, Integer phoneNum, String password, String workerType) {
 
         Security security = new Security();
 
-        security.setUserId(UserId);
+        security.setUserId(userId);
         security.setName(name);
         security.setEmail(email);
         security.setPhoneNum(phoneNum);

@@ -6,7 +6,6 @@
 package za.ac.tut.entities;
 
 import java.io.Serializable;
-import java.util.Date;
 import javax.persistence.Entity;
  
 /**
@@ -32,6 +31,4 @@ public class Security extends LaboratoryUser implements Serializable {
     public String toString() {
         return "Security{" + "workerType=" + workerType + '}';
     }
-       
-    
 }
