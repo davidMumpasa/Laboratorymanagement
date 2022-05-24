@@ -18,13 +18,13 @@ public interface StudentFacadeLocal {
 
     void create(Student student);
 
-    void edit(Student student);
+    void editStudent(Student student);
 
-    void remove(Student student);
+    void removeStudent(Student student);
 
-    Student find(Object id);
+    Student findStudent(Object id);
 
-    List<Student> findAll();
+    List<Student> findAllStudents();
 
     List<Student> findRange(int[] range);
 

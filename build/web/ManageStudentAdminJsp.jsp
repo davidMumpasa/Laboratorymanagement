@@ -14,13 +14,10 @@
     <body>
         <h1>Manage student administrators </h1>
 
-        <form action="FindAllStudentAdminServlet.do" method="POST">
-            <a href="AddStudentAdminHtml.html"> Add student administrators</a> 
-            <a href="DeleteStudentAdminHtml.html">delete student administrators info</a> 
-            <input type="submit" value="update student administrators info"/>
-        </form>
-
-
-
+        <ul>
+            <li><a href="AdminAddStudentAdmin.jsp"> Add student administrators</a> </li>
+            <li><a href="DeFindAllStudentAdminServlet.do">delete student administrators info</a> </li>
+            <li> <a href="FindAllStudentAdminServlet.do">update student administrators info</a> </li>
+        </ul>
     </body>
 </html>

@@ -15,30 +15,41 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import za.ac.tut.business.UserFacadeLocal;
+import za.ac.tut.entities.Admin;
+import za.ac.tut.entities.LaboratoryUser;
+import za.ac.tut.entities.Student;
 
 /**
  *
  * @author hp
  */
 public class StudentLoginServlet extends HttpServlet {
-
+    
     @EJB
     private UserFacadeLocal userFacade;
- 
+    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       
+        
         HttpSession session = request.getSession();
-
+        
         Long findUserById = Long.parseLong(session.getAttribute("findUserById").toString());
         String password = session.getAttribute("password").toString();
-
-        userFacade.findUser(findUserById);
-
-        RequestDispatcher disp = request.getRequestDispatcher("StudentHome.jsp");
-        disp.forward(request, response);
+        String role = session.getAttribute("role").toString();
+        
+        LaboratoryUser student = new Student();
+        
+        student = userFacade.findUser(findUserById);
+        
+        if (student.getPassword() == null ? password == null : student.getPassword().equals(password) && role.equals("student")) {
+            RequestDispatcher disp = request.getRequestDispatcher("StudentHome.jsp");
+            disp.forward(request, response);
+        } else{
+            RequestDispatcher disp = request.getRequestDispatcher("InvalidLoginJsp.jsp");
+            disp.forward(request, response);
+        }
         
     }
-
+    
 }

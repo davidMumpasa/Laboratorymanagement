@@ -7,7 +7,6 @@
 <%@page import="java.util.Iterator"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="za.ac.tut.entities.StudentAdmin"%>
-<%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -27,7 +26,7 @@
             %>
             <h1>Updated Informations </h1> 
             <table>
-             
+               
             <tr>
                 <td>User Id: </td>
                 <td><%=id%></td>
@@ -55,6 +54,6 @@
             <br>
         </table>
             
-            <a href="ManageStudentAdminJsp.jsp">Go back to the Manage Student Admin Jsp page</a>
+            <a href="AdminHome.jsp">Go back to the Manage Student Admin Jsp page</a>
     </body>
 </html>

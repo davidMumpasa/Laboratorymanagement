@@ -15,6 +15,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import za.ac.tut.business.UserFacadeLocal;
+import za.ac.tut.entities.Admin;
+import za.ac.tut.entities.LaboratoryUser;
+import za.ac.tut.entities.StudentAdmin;
 
 /**
  *
@@ -34,11 +37,19 @@ public class StudentAdminLoginServlet extends HttpServlet {
 
         Long findUserById = Long.parseLong(session.getAttribute("findUserById").toString());
         String password = session.getAttribute("password").toString();
+        String role = session.getAttribute("role").toString();
+        
+        LaboratoryUser studentAdmin = new StudentAdmin();
+        
+        studentAdmin = userFacade.findUser(findUserById);
 
-        userFacade.findUser(findUserById);
-
-        RequestDispatcher disp = request.getRequestDispatcher("StudentAdminHome.jsp");
-        disp.forward(request, response);
+        if (studentAdmin.getPassword() == null ? password == null : studentAdmin.getPassword().equals(password)&&role.equals("studentAdmin")) {
+            RequestDispatcher disp = request.getRequestDispatcher("StudentAdminHome.jsp");
+            disp.forward(request, response);
+        } else{
+            RequestDispatcher disp = request.getRequestDispatcher("InvalidLoginJsp.jsp");
+            disp.forward(request, response);
+        }
         
     }
 

@@ -5,6 +5,7 @@
  */
 package za.ac.tut.web.studentadmin;
 
+
 import java.io.IOException;
 import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
@@ -37,33 +38,29 @@ public class EditStudentAdminServlet extends HttpServlet {
         Integer phoneNum = Integer.parseInt(request.getParameter("phoneNum"));
         String password = request.getParameter("password");
         String subjectCode = request.getParameter("subjectCode");
-        
-
+ 
         StudentAdmin studAd = studentAdminFacade.findStudentAdmin(userId);
-        
-        StudentAdmin studAdmin = editStudentAdmin(studAd,userId,name,email,phoneNum,password,subjectCode);
-        
+
+        StudentAdmin studAdmin = editStudentAdmin(studAd, userId, name, email, phoneNum, password, subjectCode);
+
         studentAdminFacade.edit(studAdmin);
         session.setAttribute("studAdmin", studAdmin);
-        
-        
-        
+
         RequestDispatcher disp = request.getRequestDispatcher("EditStudentAdminJsp.jsp");
         disp.forward(request, response);
-       
+
     }
 
-    private StudentAdmin editStudentAdmin(StudentAdmin studAd,Long userId, String name, String email, Integer phoneNum, String password, String subjectCode) {
-          
-         
-         studAd.setUserId(userId);
-         studAd.setName(name);
-         studAd.setEmail(email); 
-         studAd.setPassword(password);
-         studAd.setPhoneNum(phoneNum);
-         studAd.setSubjectCode(subjectCode);
-         
-         return studAd;
+    private StudentAdmin editStudentAdmin(StudentAdmin studAd, Long userId, String name, String email, Integer phoneNum, String password, String subjectCode) {
+
+        studAd.setUserId(userId);
+        studAd.setName(name);
+        studAd.setEmail(email);
+        studAd.setPassword(password);
+        studAd.setPhoneNum(phoneNum);
+        studAd.setSubjectCode(subjectCode);
+
+        return studAd;
     }
 
 }

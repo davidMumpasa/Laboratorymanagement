@@ -5,6 +5,7 @@
  */
 package za.ac.tut.business;
 
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -27,6 +28,26 @@ public class SecurityFacade extends AbstractFacade<Security> implements Security
 
     public SecurityFacade() {
         super(Security.class);
+    }
+
+    @Override
+    public void editSecurity(Security security) {
+        edit(security);
+    }
+
+    @Override
+    public void removeSecurity(Security security) {
+        remove(security);
+    }
+
+    @Override
+    public Security findSecurity(Object id) {
+       return find(id);
+    }
+
+    @Override
+    public List<Security> findAllSecurities() {
+        return findAll();
     }
     
 }

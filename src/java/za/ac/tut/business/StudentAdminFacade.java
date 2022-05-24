@@ -39,5 +39,10 @@ public class StudentAdminFacade extends AbstractFacade<StudentAdmin> implements 
     public StudentAdmin findStudentAdmin(Object id) {
          return find(id);
     }
+
+    @Override
+    public void removeStudentAdmin(StudentAdmin studentAdmin) {
+         remove(studentAdmin);
+    }
     
 }

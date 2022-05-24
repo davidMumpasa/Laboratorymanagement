@@ -20,7 +20,7 @@ public interface StudentAdminFacadeLocal {
 
     void edit(StudentAdmin studentAdmin);
 
-    void remove(StudentAdmin studentAdmin);
+    void removeStudentAdmin(StudentAdmin studentAdmin);
 
     StudentAdmin findStudentAdmin(Object id);
 
