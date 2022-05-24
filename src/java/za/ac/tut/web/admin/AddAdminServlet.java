@@ -28,18 +28,19 @@ public class AddAdminServlet extends HttpServlet {
 
     
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
         HttpSession session = request.getSession();
         
-        Long UserId = Long.parseLong((String) session.getAttribute("UserId"));
-        String name = session.getAttribute("name").toString();
-        String email =  session.getAttribute("email").toString();
-        Integer phoneNum = Integer.parseInt((String) session.getAttribute("phoneNum"));
-        String password = session.getAttribute("password").toString();
-        String role = session.getAttribute("role").toString();
-        String verification =  session.getAttribute("verification").toString();
+        Long UserId = Long.parseLong(request.getParameter("UserId"));
+        String name = request.getParameter("name");
+        String email =  request.getParameter("email");
+        Integer phoneNum = Integer.parseInt(request.getParameter("phoneNum"));
+        String password = request.getParameter("password");
+        //String role = session.getAttribute("role").toString();
+        String verification =  request.getParameter("verification");
+        String role ="admin";
         
         LaboratoryUser user = createAdmin(UserId, role, name, email, phoneNum, password,verification);
         userFacade.AddUser(user);

@@ -6,13 +6,11 @@
 package za.ac.tut.web;
 
 import java.io.IOException;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
 
 /**
  *
@@ -20,43 +18,38 @@ import javax.servlet.http.HttpSession;
  */
 public class UserLoginHandler extends HttpServlet {
 
-   
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-        HttpSession session = request.getSession();
-
+        
+        HttpSession session = request.getSession(true);
+        
         Long findUserById = Long.parseLong(request.getParameter("findUserById"));
         String password = request.getParameter("password");
-        String role1= request.getParameter("admin");
-        String role2= request.getParameter("student");
-        String role3= request.getParameter("studentAdmin");
-        String role4= request.getParameter("security");
-        
-        String location = "SecurityLoginServlet.do";
+        String role = request.getParameter("role");
+       
+        String location = "";
 
-        if (role1.equalsIgnoreCase("admin")) {
+        if (role.equalsIgnoreCase("admin")) {
             location = "AdminLoginServlet.do";
-        } else if (role2.equalsIgnoreCase("student")) {
+        } else if (role.equalsIgnoreCase("student")) {
             location = "StudentLoginServlet.do";
-        } else if (role3.equalsIgnoreCase("student Admin")) {
+        } else if (role.equalsIgnoreCase("studentAdmin")) {
             location = "StudentAdminLoginServlet.do";
-        } else if (role3.equalsIgnoreCase("security")) {
+        } else if (role.equalsIgnoreCase("security")) {
             location = "SecurityLoginServlet.do";
         }
 
-        setValuesToSession(session, findUserById,password);
+        setValuesToSession(session, findUserById, password,role);
 
-        RequestDispatcher disp = request.getRequestDispatcher(location);
-        disp.forward(request, response);
+        response.sendRedirect(location);
     }
 
-    private void setValuesToSession(HttpSession session, Long findUserById,String password) {
+    private void setValuesToSession(HttpSession session, Long findUserById,String password, String role) {
 
         session.setAttribute("findUserById", findUserById.toString());
         session.setAttribute("password", password);
-        
+        session.setAttribute("role", role);
     }
 
 }

@@ -20,11 +20,11 @@ public interface StudentAdminFacadeLocal {
 
     void edit(StudentAdmin studentAdmin);
 
-    void remove(StudentAdmin studentAdmin);
+    void removeStudentAdmin(StudentAdmin studentAdmin);
 
-    StudentAdmin find(Object id);
+    StudentAdmin findStudentAdmin(Object id);
 
-    List<StudentAdmin> findAll();
+    List<StudentAdmin> findAllStudentAdmin();
 
     List<StudentAdmin> findRange(int[] range);
 

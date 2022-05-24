@@ -5,6 +5,7 @@
  */
 package za.ac.tut.business;
 
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -27,6 +28,21 @@ public class StudentAdminFacade extends AbstractFacade<StudentAdmin> implements 
 
     public StudentAdminFacade() {
         super(StudentAdmin.class);
+    }
+
+    @Override
+    public List<StudentAdmin> findAllStudentAdmin() {
+         return findAll();
+    }
+
+    @Override
+    public StudentAdmin findStudentAdmin(Object id) {
+         return find(id);
+    }
+
+    @Override
+    public void removeStudentAdmin(StudentAdmin studentAdmin) {
+         remove(studentAdmin);
     }
     
 }

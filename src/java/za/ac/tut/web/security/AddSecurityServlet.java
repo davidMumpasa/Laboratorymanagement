@@ -28,24 +28,24 @@ public class AddSecurityServlet extends HttpServlet {
     private UserFacadeLocal userFacade;
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
         HttpSession session = request.getSession();
 
-        Long userId = Long.parseLong((String) session.getAttribute("UserId"));
-        String name = session.getAttribute("name").toString();
-        String email = session.getAttribute("email").toString();
-        Integer phoneNum = Integer.parseInt((String) session.getAttribute("phoneNum"));
-        String password = session.getAttribute("password").toString();
-        String role = session.getAttribute("role").toString();
-        String workerType = session.getAttribute("workerType").toString();
+        Long userId = Long.parseLong(request.getParameter("UserId"));
+        String name = request.getParameter("name");
+        String email =  request.getParameter("email");
+        Integer phoneNum = Integer.parseInt(request.getParameter("phoneNum"));
+        String password = request.getParameter("password");
+        String workerType =  request.getParameter("workerType");
+        String role ="security";
 
         LaboratoryUser security = createSecurity(userId, role, name, email, phoneNum, password, workerType);
         userFacade.AddUser(security);
 
         RequestDispatcher disp = request.getRequestDispatcher("index.html");
-        disp.forward(request, response);
+        disp.forward(request, response); 
     }
 
     private LaboratoryUser createSecurity(Long userId, String role, String name, String email, Integer phoneNum, String password, String workerType) {

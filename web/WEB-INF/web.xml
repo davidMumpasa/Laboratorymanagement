@@ -9,10 +9,6 @@
         <servlet-class>za.ac.tut.web.admin.AdminLoginServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>UserServletHandler</servlet-name>
-        <servlet-class>za.ac.tut.web.UserServletHandler</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>AddStudentServlet</servlet-name>
         <servlet-class>za.ac.tut.web.student.AddStudentServlet</servlet-class>
     </servlet>
@@ -40,6 +36,66 @@
         <servlet-name>SecurityLoginServlet</servlet-name>
         <servlet-class>za.ac.tut.web.security.SecurityLoginServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>FindAllStudentAdminServlet</servlet-name>
+        <servlet-class>za.ac.tut.web.studentadmin.FindAllStudentAdminServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EditStudentAdminServlet</servlet-name>
+        <servlet-class>za.ac.tut.web.studentadmin.EditStudentAdminServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeleteStudentAdminServlet</servlet-name>
+        <servlet-class>za.ac.tut.web.studentadmin.DeleteStudentAdminServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeFindAllStudentAdminServlet</servlet-name>
+        <servlet-class>za.ac.tut.web.studentadmin.DeFindAllStudentAdminServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AdminAddStudentAdminServlet</servlet-name>
+        <servlet-class>za.ac.tut.web.admin.AdminAddStudentAdminServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AdminAddStudentServlet</servlet-name>
+        <servlet-class>za.ac.tut.web.admin.AdminAddStudentServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>FindAllStudent</servlet-name>
+        <servlet-class>za.ac.tut.web.student.FindAllStudent</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EditStudentServlet</servlet-name>
+        <servlet-class>za.ac.tut.web.student.EditStudentServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DelStudent</servlet-name>
+        <servlet-class>za.ac.tut.web.student.DelStudent</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeFindAllStudentServlet</servlet-name>
+        <servlet-class>za.ac.tut.web.student.DeFindAllStudentServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AdminAddSecurityServlet</servlet-name>
+        <servlet-class>za.ac.tut.web.admin.AdminAddSecurityServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeFindAllSecurityServlet</servlet-name>
+        <servlet-class>za.ac.tut.web.security.DeFindAllSecurityServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DelSecurity</servlet-name>
+        <servlet-class>za.ac.tut.web.security.DelSecurity</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>FindAllSecurity</servlet-name>
+        <servlet-class>za.ac.tut.web.security.FindAllSecurity</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EditSecurityServlet</servlet-name>
+        <servlet-class>za.ac.tut.web.security.EditSecurityServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AddAdminServlet</servlet-name>
         <url-pattern>/AddAdminServlet.do</url-pattern>
@@ -47,10 +103,6 @@
     <servlet-mapping>
         <servlet-name>AdminLoginServlet</servlet-name>
         <url-pattern>/AdminLoginServlet.do</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>UserServletHandler</servlet-name>
-        <url-pattern>/UserServletHandler.do</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>AddStudentServlet</servlet-name>
@@ -79,6 +131,66 @@
     <servlet-mapping>
         <servlet-name>SecurityLoginServlet</servlet-name>
         <url-pattern>/SecurityLoginServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FindAllStudentAdminServlet</servlet-name>
+        <url-pattern>/FindAllStudentAdminServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditStudentAdminServlet</servlet-name>
+        <url-pattern>/EditStudentAdminServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteStudentAdminServlet</servlet-name>
+        <url-pattern>/DeleteStudentAdminServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeFindAllStudentAdminServlet</servlet-name>
+        <url-pattern>/DeFindAllStudentAdminServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AdminAddStudentAdminServlet</servlet-name>
+        <url-pattern>/AdminAddStudentAdminServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AdminAddStudentServlet</servlet-name>
+        <url-pattern>/AdminAddStudentServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FindAllStudent</servlet-name>
+        <url-pattern>/FindAllStudent.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditStudentServlet</servlet-name>
+        <url-pattern>/EditStudentServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DelStudent</servlet-name>
+        <url-pattern>/DelStudent.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeFindAllStudentServlet</servlet-name>
+        <url-pattern>/DeFindAllStudentServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AdminAddSecurityServlet</servlet-name>
+        <url-pattern>/AdminAddSecurityServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeFindAllSecurityServlet</servlet-name>
+        <url-pattern>/DeFindAllSecurityServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DelSecurity</servlet-name>
+        <url-pattern>/DelSecurity.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FindAllSecurity</servlet-name>
+        <url-pattern>/FindAllSecurity.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditSecurityServlet</servlet-name>
+        <url-pattern>/EditSecurityServlet.do</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

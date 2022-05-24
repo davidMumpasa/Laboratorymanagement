@@ -5,16 +5,23 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
+    
+    
     <head>
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
         <link rel="stylesheet" href="LoginDesign.css">
+        
     </head>
+    
+    
+    
     <body>
         <div class="center"> 
             <h1>Login</h1>
-            <form action="UserLoginHandler.do" method="GET">
+            <form action="UserLoginHandler.do" method="POST">
                 <div class="text_field">
                     <input type="text" name="findUserById" required> 
                     <label>Id Number:</label>
@@ -24,13 +31,14 @@ and open the template in the editor.
                     <label>Password: </label>
                     
                 </div>
-                
-                <div>
-                    <label>Admin</label><input type="checkbox" value="Admin" name="admin"/> 
-                    <label>Student</label><input type="checkbox" value="Student" name="student"/> 
-                    <label>Student Admin</label><input type="checkbox" value="Student Admin" name="studentAdmin"/> 
-                    <label>Security</label><input type="checkbox" value="Security" name="security"/> 
-                </div>
+                <select name="role">
+                        <option value="admin">Admin</option>
+                        <option value="student">Student</option>
+                        <option value="studentAdmin">Student Admin</option>
+                        <option value="security">Security</option>
+                    </select>
+                     
+                 
                  
                  <input type="submit" value="Login"> 
 
@@ -39,4 +47,7 @@ and open the template in the editor.
             </form>
         </div>
     </body>
+    
 </html>
+
+  

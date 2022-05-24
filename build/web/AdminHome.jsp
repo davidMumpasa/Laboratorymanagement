@@ -13,5 +13,15 @@
     </head>
     <body>
         <h1>welcome Admin!!!!!</h1>
+        <div>
+            <ul>
+                <li><a href="ManageStudentAdminJsp.jsp">manage student administrators</a></li>
+                <li><a href="ManageStudentJsp.jsp">manage students</a></li>
+                <li><a href="ManageSecurity.jsp"> manage securities</a></li>
+            </ul>
+
+        </div>
+
+         
     </body>
 </html>

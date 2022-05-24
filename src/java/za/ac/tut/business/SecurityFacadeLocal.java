@@ -18,13 +18,13 @@ public interface SecurityFacadeLocal {
 
     void create(Security security);
 
-    void edit(Security security);
+    void editSecurity(Security security);
 
-    void remove(Security security);
+    void removeSecurity(Security security);
 
-    Security find(Object id);
+    Security findSecurity(Object id);
 
-    List<Security> findAll();
+    List<Security> findAllSecurities();
 
     List<Security> findRange(int[] range);
 
