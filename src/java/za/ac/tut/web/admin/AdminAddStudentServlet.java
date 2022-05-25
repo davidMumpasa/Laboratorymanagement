@@ -38,7 +38,7 @@ public class AdminAddStudentServlet extends HttpServlet {
         String name = request.getParameter("name");
         String email = request.getParameter("email");
         Integer phoneNum = Integer.parseInt(request.getParameter("phoneNum"));
-        String password = request.getParameter("password");
+        String password = "123";
         String role = "student";
         String campus = request.getParameter("campus");
 

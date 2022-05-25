@@ -19,11 +19,20 @@
         <%
             List<StudentAdmin> StudentAdmins = new ArrayList();
             StudentAdmins = (List<StudentAdmin>) request.getAttribute("DeletedStudentAdmins");
+          %>
+    <table bgcolor = "black">
 
-            Long id = null;
+                <tr bgcolor ="grey" >
+                    <th>User Id: </th>
+                    <th>name: </th>
+                    <th>email: </th>
+                    <th>phone Number:</th>
+                    <th>worker Type:</th>
+                </tr>
+
+                <% Long id = null;
             String name = "";
             String email = "";
-            String password = "";
             Integer phoneNum = 0;
             String SubjectCode = "";
             int count = 0;
@@ -31,46 +40,26 @@
                 id = studAd.getId();
                 name = studAd.getName();
                 email = studAd.getEmail();
-                password = studAd.getPassword();
                 phoneNum = studAd.getPhoneNum();
                 SubjectCode = studAd.getSubjectCode();
                 count++;
 
-        %>
 
-        <table>
-            <p><%=count%> )</p>
-            <tr>
-                <td>User Id: </td>
-                <td><%=id%></td>
-            </tr>
-            <tr>
-                <td>name: </td>
-                <td><%=name%></td>
-            </tr>
-            <tr>
-                <td>email: </td>
-                <td><%=email%></td>
-            </tr>
-            <tr>
-                <td>password: </td>
-                <td><%=password%></td>
-            </tr>
-            <tr>
-                <td>phone Number:</td>
-                <td><%=phoneNum%></td>
-            </tr>
-            <tr>
-                <td>Subject Code:</td>
-                <td><%=SubjectCode%></td>
-            </tr>  
-            <br>
-        </table>
+                %>
+                <tr bgcolor ="lightgrey">
+                    <td id="userId"><%=id%></td>
+                    <td id="name"><%=name%></td>
+                    <td id="email"><%=email%></td>
+                    <td id="phoneNum"><%=phoneNum%></td>
+                    <td id="SubjectCode"><%=SubjectCode%></td>
+                    <td><input type="submit" value="delete"/></td>
+                </tr>
 
 
-        <%
-            }
-        %>
+                <%
+                    }
+                %>
+            </table>
         
         <a href="AdminHome.jsp">Go back to the Manage Student Admin Jsp page</a>
     </body>

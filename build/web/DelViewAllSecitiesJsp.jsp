@@ -20,73 +20,59 @@
             List<Security> securities = new ArrayList();
             securities = (List<Security>) session.getAttribute("securities");
 
+           %>
+        
+         <form action="DelSecurity.do" method="Post">
+            <div><p>Which Student would you like to edit ?</p><br> Please enter the User Id:</div>
+
+            <table bgcolor = "black">
+            
+            <tr bgcolor ="grey" >
+                <th>User Id: </th>
+                <th>name: </th>
+                <th>email: </th>
+                <th>phone Number:</th>
+                <th>worker Type:</th>
+            </tr>
+        
+
+        <%
+
             Long id = null;
             String name = "";
             String email = "";
-            String password = "";
             Integer phoneNum = 0;
             String workerType = "";
             int count = 0;
+        
             for (Security security : securities) {
                 id = security.getId();
                 name = security.getName();
                 email = security.getEmail();
-                password = security.getPassword();
                 phoneNum = security.getPhoneNum();
                 workerType = security.getWorkerType();
-                count++;
+                //count++;
 
         %>
-
-        <table>
-            <p><%=count%> )</p>
-            <tr>
-                <td>User Id: </td>
-                <td><%=id%></td>
-            </tr>
-            <tr>
-                <td>name: </td>
-                <td><%=name%></td>
-            </tr>
-            <tr>
-                <td>email: </td>
-                <td><%=email%></td>
-            </tr>
-            <tr>
-                <td>password: </td>
-                <td><%=password%></td>
-            </tr>
-            <tr>
-                <td>phone Number:</td>
-                <td><%=phoneNum%></td>
-            </tr>
-            <tr>
-                <td>Subject Code:</td>
-                <td><%=workerType%></td>
-            </tr>  
-            <br>
-        </table>
-
+            <<tr bgcolor ="lightgrey">
+                    <td id="userId"><input type="text" name="userId" value="<%=id%>"/></td>
+                    <td id="name"><%=name%></td>
+                    <td id="email"><%=email%></td>
+                    <td id="phoneNum"><%=phoneNum%></td>
+                    <td id="SubjectCode"><%=workerType%></td>
+                    <td><input type="submit" value="delete"/></td>
+                </tr>
+            
 
         <%
             }
         %>
-
-
-        <form action="DelSecurity.do" method="Post">
-            <div><p>Which Student would you like to delete?</p><br> Please enter the User Id:</div>
-
-
-            <table>
-                <tr>
-                    <td>User Number:</td>
-                    <td><input type="text" name="userId"/></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td><input type="submit" value="delete"/></td>
-                </tr>
-            </table>
+        </table>
+        
+           
         </form>
+        
+        
+        
     </body>
 </html>

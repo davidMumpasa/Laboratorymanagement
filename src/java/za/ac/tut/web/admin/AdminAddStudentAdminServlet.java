@@ -26,25 +26,25 @@ public class AdminAddStudentAdminServlet extends HttpServlet {
 
     @EJB
     private UserFacadeLocal userFacade;
- 
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-    HttpSession session = request.getSession();
+        HttpSession session = request.getSession();
 
         Long UserId = Long.parseLong(request.getParameter("UserId"));
         String name = request.getParameter("name");
         String email = request.getParameter("email");
         Integer phoneNum = Integer.parseInt(request.getParameter("phoneNum"));
-        String password = request.getParameter("password");
+        String password = "123";
         String role = "student admin";
         String subjectCode = request.getParameter("subjectCode");
 
         LaboratoryUser studentAdmin = createStudentAdmin(UserId, role, name, email, phoneNum, password, subjectCode);
         userFacade.AddUser(studentAdmin);
-        
+
         request.setAttribute("studentAdmin", studentAdmin);
-        
+
         RequestDispatcher disp = request.getRequestDispatcher("AdminAddStudentAdminOutcome.jsp");
         disp.forward(request, response);
     }
