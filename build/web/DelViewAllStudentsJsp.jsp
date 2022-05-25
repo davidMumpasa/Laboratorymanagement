@@ -20,73 +20,62 @@
             List<Student> Students = new ArrayList();
             Students = (List<Student>) session.getAttribute("Students");
 
-            Long id = null;
+           %>
+        
+        <form action="DelStudent.do" method="Post">
+            <div><p>Which Student would you like to edit ?</p><br> Please enter the User Id:</div>
+
+            <table bgcolor = "black">
+            
+            <tr bgcolor ="grey" >
+                <th>User Id: </th>
+                <th>name: </th>
+                <th>email: </th>
+                <th>phone Number:</th>
+                <th>campus:</th>
+            </tr>
+            
+            <%  Long id = null;
             String name = "";
             String email = "";
-            String password = "";
             Integer phoneNum = 0;
             String campus = "";
             int count = 0;
-            for (Student student : Students) {
-                id = student.getId();
-                name = student.getName();
-                email = student.getEmail();
-                password = student.getPassword();
-                phoneNum = student.getPhoneNum();
-                campus = student.getCampus();
-                count++;
+        
+            for (Student studAd : Students) {
+                id = studAd.getId();
+                name = studAd.getName();
+                email = studAd.getEmail();
+                phoneNum = studAd.getPhoneNum();
+                campus = studAd.getCampus();
+                //count++;
 
         %>
-
-        <table>
-            <p><%=count%> )</p>
-            <tr>
-                <td>User Id: </td>
-                <td><%=id%></td>
+            <tr bgcolor ="lightgrey">
+                 
+                
+                <tr bgcolor ="lightgrey">
+                     <td id="userId"><input type="text" name="userId" value="<%=id%>"/></td>
+                    <td id="name"><%=name%></td>
+                    <td id="email"><%=email%></td>
+                    <td id="phoneNum"><%=phoneNum%></td>
+                    <td id="SubjectCode"><%=campus%></td>
+                    <td><input type="submit" value="delete"/></td>
+                </tr>
+                  
             </tr>
-            <tr>
-                <td>name: </td>
-                <td><%=name%></td>
-            </tr>
-            <tr>
-                <td>email: </td>
-                <td><%=email%></td>
-            </tr>
-            <tr>
-                <td>password: </td>
-                <td><%=password%></td>
-            </tr>
-            <tr>
-                <td>phone Number:</td>
-                <td><%=phoneNum%></td>
-            </tr>
-            <tr>
-                <td>Subject Code:</td>
-                <td><%=campus%></td>
-            </tr>  
-            <br>
-        </table>
-
+            
 
         <%
             }
         %>
-
-
-        <form action="DelStudent.do" method="Post">
-            <div><p>Which Student would you like to delete?</p><br> Please enter the User Id:</div>
-
-
-            <table>
-                <tr>
-                    <td>User Number:</td>
-                    <td><input type="text" name="userId"/></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td><input type="submit" value="delete"/></td>
-                </tr>
-            </table>
+        </table>
+        
+           
         </form>
+        
+        
+        
+        
     </body>
 </html>

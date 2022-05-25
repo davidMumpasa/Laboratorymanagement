@@ -20,7 +20,6 @@
             Long id = studAd.getId();
             String name = studAd.getName();
             String email = studAd.getEmail();
-            String password = studAd.getPassword();
             Integer phoneNum = studAd.getPhoneNum();
             String SubjectCode = studAd.getSubjectCode();
             %>
@@ -39,10 +38,7 @@
                 <td>email: </td>
                 <td><%=email%></td>
             </tr>
-            <tr>
-                <td>password: </td>
-                <td><%=password%></td>
-            </tr>
+           
             <tr>
                 <td>phone Number:</td>
                 <td><%=phoneNum%></td>

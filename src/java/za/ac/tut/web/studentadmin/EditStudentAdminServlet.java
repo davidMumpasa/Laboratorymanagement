@@ -36,12 +36,11 @@ public class EditStudentAdminServlet extends HttpServlet {
         String name = request.getParameter("name");
         String email = request.getParameter("email");
         Integer phoneNum = Integer.parseInt(request.getParameter("phoneNum"));
-        String password = request.getParameter("password");
         String subjectCode = request.getParameter("subjectCode");
  
         StudentAdmin studAd = studentAdminFacade.findStudentAdmin(userId);
 
-        StudentAdmin studAdmin = editStudentAdmin(studAd, userId, name, email, phoneNum, password, subjectCode);
+        StudentAdmin studAdmin = editStudentAdmin(studAd, userId, name, email, phoneNum, subjectCode);
 
         studentAdminFacade.edit(studAdmin);
         session.setAttribute("studAdmin", studAdmin);
@@ -51,12 +50,11 @@ public class EditStudentAdminServlet extends HttpServlet {
 
     }
 
-    private StudentAdmin editStudentAdmin(StudentAdmin studAd, Long userId, String name, String email, Integer phoneNum, String password, String subjectCode) {
+    private StudentAdmin editStudentAdmin(StudentAdmin studAd, Long userId, String name, String email, Integer phoneNum , String subjectCode) {
 
         studAd.setUserId(userId);
         studAd.setName(name);
         studAd.setEmail(email);
-        studAd.setPassword(password);
         studAd.setPhoneNum(phoneNum);
         studAd.setSubjectCode(subjectCode);
 

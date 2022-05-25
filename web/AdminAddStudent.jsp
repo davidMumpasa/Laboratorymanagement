@@ -33,12 +33,6 @@
                     <td>Phone Number:</td>
                     <td><input type="text" name="phoneNum"/></td>
                 </tr>
-                
-                <tr>
-                    <td>Password:</td>
-                    <td><input type="text" name="password"/></td>
-                </tr>
-                
                 <tr>
                     <td>campus:</td>
                     <td><input type="text" name="campus"/></td>

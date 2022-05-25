@@ -19,58 +19,49 @@
         <%
             List<Security> DeletedSecurities = new ArrayList();
             DeletedSecurities = (List<Security>) request.getAttribute("DeletedSecurities");
+            %>
+             <table bgcolor = "black">
+            
+            <tr bgcolor ="grey" >
+                <th>User Id: </th>
+                <th>name: </th>
+                <th>email: </th>
+                <th>phone Number:</th>
+                <th>worker Type:</th>
+            </tr>
+        
+
+        <%
 
             Long id = null;
             String name = "";
             String email = "";
-            String password = "";
             Integer phoneNum = 0;
             String workerType = "";
             int count = 0;
+        
             for (Security security : DeletedSecurities) {
                 id = security.getId();
                 name = security.getName();
                 email = security.getEmail();
-                password = security.getPassword();
                 phoneNum = security.getPhoneNum();
                 workerType = security.getWorkerType();
-                count++;
+                //count++;
 
         %>
-
-        <table>
-            <p><%=count%> )</p>
-            <tr>
-                <td>User Id: </td>
-                <td><%=id%></td>
+            <tr bgcolor ="lightgrey">
+                <td id="userId"> <%=id%></td>
+                    <td id="name"><%=name%></td>
+                    <td id="email"><%=email%></td>
+                    <td id="phoneNum"><%=phoneNum%></td>
+                    <td id="SubjectCode"><%=workerType%></td>
             </tr>
-            <tr>
-                <td>name: </td>
-                <td><%=name%></td>
-            </tr>
-            <tr>
-                <td>email: </td>
-                <td><%=email%></td>
-            </tr>
-            <tr>
-                <td>password: </td>
-                <td><%=password%></td>
-            </tr>
-            <tr>
-                <td>phone Number:</td>
-                <td><%=phoneNum%></td>
-            </tr>
-            <tr>
-                <td>Subject Code:</td>
-                <td><%=workerType%></td>
-            </tr>  
-            <br>
-        </table>
-
+            
 
         <%
             }
         %>
+        </table>
         
         <a href="AdminHome.jsp">Go back to the Manage Student Jsp page</a>
     </body>

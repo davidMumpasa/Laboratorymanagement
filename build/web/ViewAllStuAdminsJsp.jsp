@@ -22,91 +22,55 @@
             List<StudentAdmin> StudentAdmins = new ArrayList();
             StudentAdmins = (List<StudentAdmin>) session.getAttribute("StudentAdmins");
 
-            Long id = null;
-            String name = "";
-            String email = "";
-            String password = "";
-            Integer phoneNum = 0;
-            String SubjectCode = "";
-            int count = 0;
-        
-            for (StudentAdmin studAd : StudentAdmins) {
-                id = studAd.getId();
-                name = studAd.getName();
-                email = studAd.getEmail();
-                password = studAd.getPassword();
-                phoneNum = studAd.getPhoneNum();
-                SubjectCode = studAd.getSubjectCode();
-                //count++;
-
         %>
 
-        <table bgcolor = "black">
+        <form action="EditSecurityServlet.do" method="Post">
+            <div><p>Which Student would you like to edit ?</p><br> Please enter the User Id:</div>
 
-            <tr bgcolor ="grey" >
-                <th>User Id: </th>
-                <th>name: </th>
-                <th>email: </th>
-                <th>password: </th>
-                <th>phone Number:</th>
-                <th>Subject Code:</th>
-            </tr>
-            <tr bgcolor ="lightgrey">
-                <td id="userId"><%=id%></td>
-                <td id="name"><%=name%></td>
-                <td id="email"><%=email%></td>
-                <td id="password"><%=password%></td>
-                <td id="phoneNum"><%=phoneNum%></td>
-                <td id="SubjectCode"><%=SubjectCode%></td>
-            </tr>
-        </table>
+            <table bgcolor = "black">
 
-
-        <%
-            }
-        %>
-        
-        <form action="EditStudentAdminServlet.do" method="Post">
-            <div><p>Which Student Administrator would you like to edit ?</p><br> Please enter the User Id:</div>
-
-
-            <table  >
-                <tr>
-                    <td>User Number:</td>
-                    <td ><input type="text" name="userId"/></td>
+                <tr bgcolor ="grey" >
+                    <th>User Id: </th>
+                    <th>name: </th>
+                    <th>email: </th>
+                    <th>phone Number:</th>
+                    <th>worker Type:</th>
                 </tr>
 
-                <tr>
-                    <td>name:</td>
-                    <td><input type="text" name="name"/></td>
-                </tr>
+                <% Long id = null;
+                    String name = "";
+                    String email = "";
+                    Integer phoneNum = 0;
+                    String SubjectCode = "";
+                    int count = 0;
 
-                <tr>
-                    <td>Email:</td>
-                    <td><input type="text" name="email"/></td>
-                </tr>
+                    for (StudentAdmin studAd : StudentAdmins) {
+                        id = studAd.getId();
+                        name = studAd.getName();
+                        email = studAd.getEmail();
+                        phoneNum = studAd.getPhoneNum();
+                        SubjectCode = studAd.getSubjectCode();
+                        //count++;
 
-                <tr>
-                    <td>Phone Number:</td>
-                    <td><input type="text" name="phoneNum"/></td>
-                </tr>
+                %>
+                <tr bgcolor ="lightgrey">
+                    <td id="userId"><input type="text" name="userId" value="<%=id%>"/></td>
 
-                <tr>
-                    <td>Password:</td>
-                    <td><input type="text" name="password"/></td>
-                </tr>
-
-                <tr>
-                    <td>subject Code:</td>
-                    <td><input type="text" name="subjectCode"/></td>
-                </tr>
-                <tr>
-                    <td></td>
+                    <td id="name"><input type="text" name="name" value="<%=name%>"/></td>
+                    <td id="email"><input type="text" name="email" value="<%=email%>"/></td>
+                    <td id="phoneNum"><input type="text" name="phoneNum" value="<%=phoneNum%>"/></td>
+                    <td id="SubjectCode"><input type="text" name="campus" value="<%=SubjectCode%>"/></td>
                     <td><input type="submit" value="Edit"/></td>
-                </tr> 
+                </tr>
 
+
+                <%
+                    }
+                %>
             </table>
+
         </form>
+
 
     </body>
 </html>

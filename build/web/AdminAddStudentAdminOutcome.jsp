@@ -18,7 +18,6 @@
             Long id = studentAdmin.getId();
             String name = studentAdmin.getName();
             String email = studentAdmin.getEmail();
-            String password = studentAdmin.getPassword();
             Integer phoneNum = studentAdmin.getPhoneNum();
             String SubjectCode = studentAdmin.getSubjectCode();
         %>
@@ -36,10 +35,6 @@
             <tr>
                 <td>email: </td>
                 <td><%=email%></td>
-            </tr>
-            <tr>
-                <td>password: </td>
-                <td><%=password%></td>
             </tr>
             <tr>
                 <td>phone Number:</td>

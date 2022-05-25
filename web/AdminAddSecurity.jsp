@@ -35,11 +35,6 @@
                 </tr>
                 
                 <tr>
-                    <td>Password:</td>
-                    <td><input type="text" name="password"/></td>
-                </tr>
-                
-                <tr>
                     <td>worker Type:</td>
                     <td><input type="text" name="workerType"/></td>
                 </tr>
